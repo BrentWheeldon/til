@@ -9,12 +9,24 @@ select > workspace.showOutput
 
 ## Connect observer to iex
 
-```
+```sh
 iex --sname k --cookie cookie -S mix
 ```
 
 then
 
-```
+```sh
 erl -sname observer -setcookie cookie -run observer start
+```
+
+## Run SQL from file with DB2
+
+```sh
+db2 -tvmf filename.sql
+```
+
+## Load data from CSV in DB2
+
+```sql
+LOAD FROM "/database/config/db2inst1/db_load_temp/smdsear.txt" OF DEL INSERT INTO TMDSEAR
 ```
