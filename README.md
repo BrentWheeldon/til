@@ -30,3 +30,11 @@ db2 -tvmf filename.sql
 ```sql
 LOAD FROM "/database/config/db2inst1/db_load_temp/smdsear.txt" OF DEL INSERT INTO TMDSEAR
 ```
+
+## Find what we're compiled against
+
+```sql
+SELECT QUALIFIER, BINDTIME
+FROM SYSIBM.SYSPACKAGE
+WHERE NAME = <PROG_ID>
+```
