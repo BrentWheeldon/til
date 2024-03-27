@@ -41,9 +41,17 @@ WHERE NAME = <PROG_ID>
 
 ## nix-direnv
 
+```sh
 sudo mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
 sudo chown -R $USER:nixbld /nix/var/nix/{profiles,gcroots}/per-user/$USER
 mkdir -p ~/.config/direnv/
 
 nix-env -f '<nixpkgs>' -iA nix-direnv
 # add "source $HOME/.nix-profile/share/nix-direnv/direnvrc" to $HOME/.config/direnv/direnvrc
+```
+
+## Get first N bytes of file
+
+```sh
+dd if=in.file bs=1 count=500 of=out.file
+```
